@@ -1,0 +1,31 @@
+﻿{
+    "name": "com.shakotis.proxyevents",
+    "displayName": "ProxyEvents",
+    "version": "0.0.1",
+    "unity": "6000.0",
+    "license": "Proprietary-Private",
+    "description": "Use ProxyEvents package when you're building game on Unity and need lot's of different player events. \n\n Features: \n▪️ Templated, Conditional, State-Driven.",
+    "keywords": [
+        "DOTS",
+        "Events",
+        "Module"
+    ],
+    "author": {
+        "name": "carrotpie",
+        "email": "carrotpie@gmail.com",
+        "url": "https://github.com/Darth-Carrotpie"
+    },
+    "dependencies": {},
+    "samples": [
+        {
+            "displayName": "Basic sample",
+            "description": "Basic example how to setup the events.",
+            "path": "Samples~/Basic"
+        },
+        {
+            "displayName": "Scene",
+            "description": "Scene which contains all samples.",
+            "path": "Samples~/Scene"
+        }
+    ]
+}

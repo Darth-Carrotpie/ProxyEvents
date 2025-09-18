@@ -25,20 +25,20 @@ jobs:
       - name: Prepare folders and Files
       #rename Samples folder, because in a working unity project we cannot have Samples~ folder, or Unity will just never import it.
         run: |
-          mv Assets/ProxyTooltips/Samples Assets/ProxyTooltips/Samples~
-          #The ProxyTooltips project is set up to have a nice structure of all required resources under assets/ProxyTooltips, therefore we will use all of the folder to publish
-          mv Assets/ProxyTooltips Packages/com.shakotis.proxytooltips
-          #mv Packages/manifest.json Packages/com.shakotis.proxytooltips/manifest.json #This is not needed, because the manifest is in the root of the project?
-          sed -i '1s/^\xEF\xBB\xBF//' Packages/com.shakotis.proxytooltips/package.json
-          cat Packages/com.shakotis.proxytooltips/package.json | jq .
+          mv Assets/ProxyEvents/Samples Assets/ProxyEvents/Samples~
+          #The ProxyEvents project is set up to have a nice structure of all required resources under assets/ProxyEvents, therefore we will use all of the folder to publish
+          mv Assets/ProxyEvents Packages/com.shakotis.proxyevents
+          #mv Packages/manifest.json Packages/com.shakotis.proxyevents/manifest.json #This is not needed, because the manifest is in the root of the project?
+          sed -i '1s/^\xEF\xBB\xBF//' Packages/com.shakotis.proxyevents/package.json
+          cat Packages/com.shakotis.proxyevents/package.json | jq .
           git config --global user.email "kiber@shakotis.com"
           git config --global user.name "github-actions[bot]"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Darth-Carrotpie/ProxyTooltips.git
-          git add Packages/com.shakotis.proxytooltips
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Darth-Carrotpie/ProxyEvents.git
+          git add Packages/com.shakotis.proxyevents
           git commit -m "Ensure package directory exists for subtree split"
 
       - name: Publish Unity package
         uses: cdmvision/action-upm-publish@v1
         with: 
-          name: 'com.shakotis.proxytooltips'
+          name: 'com.shakotis.proxyevents'
           upmBranch: 'upm'
